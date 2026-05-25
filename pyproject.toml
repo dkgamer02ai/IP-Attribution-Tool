@@ -1,0 +1,23 @@
+[project]
+name = "ip-attribution-tool"
+version = "0.1.0"
+description = "Attribute IPs via DNS, Netblock, or Censys keyword lookup."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "httpx>=0.27",
+    "beautifulsoup4>=4.12",
+    "dnspython>=2.6",
+    "python-dotenv>=1.0",
+    "rich>=13.7",
+]
+
+[project.scripts]
+ip-attribution = "ipattr.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ipattr"]
